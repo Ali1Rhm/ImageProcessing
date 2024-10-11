@@ -32,10 +32,10 @@
         {
             GrayscalePage grayscalePage = new GrayscalePage();
 
-            Bitmap formulated = ImageProccessing.FormulatedGrayscale((Bitmap)picbox_display.Image);
-            Bitmap library = ImageProccessing.LibraryGrayscale((Bitmap)picbox_display.Image);
+            Bitmap formulated = ImageProcessing.FormulatedGrayscale((Bitmap)picbox_display.Image);
+            Bitmap library = ImageProcessing.LibraryGrayscale((Bitmap)picbox_display.Image);
 
-            float diff = ImageProccessing.GetBitmapDifference(formulated, library);
+            float diff = ImageProcessing.GetBitmapDifference(formulated, library);
 
             grayscalePage.PicBox_Grayscale.Image = formulated;
             grayscalePage.Picbox_Lib_Grayscale.Image = library;
@@ -51,7 +51,7 @@
             Bitmap rChannel;
             Bitmap gChannel;
             Bitmap bChannel;
-            ImageProccessing.SeperateRGBChannels((Bitmap)picbox_display.Image, out rChannel, out gChannel, out bChannel);
+            ImageProcessing.SeperateRGBChannels((Bitmap)picbox_display.Image, out rChannel, out gChannel, out bChannel);
 
             channels_Page.Main.Image = (Bitmap)picbox_display.Image;
             channels_Page.Channel_01.Image = rChannel;
@@ -68,7 +68,7 @@
             Bitmap cChannel;
             Bitmap mChannel;
             Bitmap yChannel;
-            ImageProccessing.SeperateCMYChannels((Bitmap)picbox_display.Image, out cChannel, out mChannel, out yChannel);
+            ImageProcessing.SeperateCMYChannels((Bitmap)picbox_display.Image, out cChannel, out mChannel, out yChannel);
 
             channels_Page.Main.Image = (Bitmap)picbox_display.Image;
             channels_Page.Channel_01.Image = cChannel;
@@ -85,7 +85,7 @@
             Bitmap yChannel;
             Bitmap uChannel;
             Bitmap vChannel;
-            ImageProccessing.SeperateYUVChannels((Bitmap)picbox_display.Image, out yChannel, out uChannel, out vChannel);
+            ImageProcessing.SeperateYUVChannels((Bitmap)picbox_display.Image, out yChannel, out uChannel, out vChannel);
 
             channels_Page.Main.Image = (Bitmap)picbox_display.Image;
             channels_Page.Channel_01.Image = yChannel;
@@ -102,7 +102,7 @@
             Bitmap hChannel;
             Bitmap lChannel;
             Bitmap sChannel;
-            ImageProccessing.SeperateHLSChannels((Bitmap)picbox_display.Image, out hChannel, out lChannel, out sChannel);
+            ImageProcessing.SeperateHLSChannels((Bitmap)picbox_display.Image, out hChannel, out lChannel, out sChannel);
 
             channels_Page.Main.Image = (Bitmap)picbox_display.Image;
             channels_Page.Channel_01.Image = hChannel;
@@ -117,7 +117,7 @@
             Detection_Page detection_Page = new Detection_Page();
 
             Bitmap main = (Bitmap)picbox_display.Image;
-            Bitmap detected = ImageProccessing.DetectSkin(main);
+            Bitmap detected = ImageProcessing.DetectSkin(main);
 
             detection_Page.PicBox_Main.Image = main;
             detection_Page.PicBox_Detected.Image = detected;
@@ -130,7 +130,7 @@
             Detection_Page detection_Page = new Detection_Page();
 
             Bitmap main = (Bitmap)picbox_display.Image;
-            Bitmap detected = ImageProccessing.DetectRedEye(main);
+            Bitmap detected = ImageProcessing.DetectRedEye(main);
 
             detection_Page.PicBox_Main.Image = main;
             detection_Page.PicBox_Detected.Image = detected;

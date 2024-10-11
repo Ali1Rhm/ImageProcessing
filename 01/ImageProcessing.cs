@@ -3,7 +3,7 @@ using Emgu.CV;
 
 namespace _01
 {
-    public static class ImageProccessing
+    public static class ImageProcessing
     {
         public static Bitmap FormulatedGrayscale(Bitmap bitmap)
         {
